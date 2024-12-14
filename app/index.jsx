@@ -5,8 +5,13 @@ import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated from 'react-native-reanimated';
 import { FadeIn, FadeOut } from 'react-native-reanimated';
+import { use } from 'react';
+import { useRouter } from 'expo-router';
 
 export default function Index() {
+
+  const router = useRouter(); 
+
   return (
     <View style={{ flex: 1, position: 'relative' }}>
       <StatusBar style="light" />
@@ -46,7 +51,7 @@ export default function Index() {
       >
         {/* Animated Text */}
         <Animated.View
-          entering={FadeIn.duration(1000)} // Enter animation
+          entering={FadeIn.duration(2000)} // Enter animation
           exiting={FadeOut.duration(500)} // Exit animation
         >
           <Text
@@ -76,10 +81,12 @@ export default function Index() {
 
         {/* Button */}
         <Animated.View
-        entering={FadeIn.duration(2000)} // Enter animation
+        entering={FadeIn.delay(50).duration(2000)} // Enter animation
         exiting={FadeOut.duration(500)} // Exit animation
       >
           <TouchableOpacity
+
+            onPress={() => router.push('home')} 
             style={{
               height: hp(7),
               width: wp(60),
