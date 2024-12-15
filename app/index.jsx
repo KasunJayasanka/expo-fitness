@@ -14,7 +14,7 @@ export default function Index() {
 
   return (
     <View style={{ flex: 1, position: 'relative' }}>
-      <StatusBar style="light" />
+       
       
       {/* Background Image */}
       <Image
@@ -112,6 +112,7 @@ export default function Index() {
             </Text>
           </TouchableOpacity>
           </Animated.View>
+          <StatusBar style="light" />
       </View>
     </View>
   );
