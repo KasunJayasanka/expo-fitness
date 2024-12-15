@@ -3,6 +3,9 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 import React from 'react';
 import { useRouter } from 'expo-router';
 import { Image } from 'expo-image';
+import Animated, {FadeInDown} from 'react-native-reanimated';
+import { formatText } from "../utils/textFormatter"; // Import the utility function
+
 
 export default function ExerciseList({ data }) { // Destructure the `data` prop here
     const router = useRouter();
@@ -28,8 +31,8 @@ export default function ExerciseList({ data }) { // Destructure the `data` prop 
 
 const ExerciseCard = ({ item, router, index }) => {
     return (
-        <View>
-            <TouchableOpacity className="flex py-3 space-y-2">
+        <Animated.View entering={FadeInDown.duration(400).delay(index*200).springify()}>
+            <TouchableOpacity onPress={()=>router.push({ pathname: "/exerciseDetails", params: item })} className="flex py-3 space-y-2">
                 <View className="bg-neutral-200 shadow"
                 style={{
                     borderRadius: 25, // Ensure proper rounding
@@ -48,9 +51,9 @@ const ExerciseCard = ({ item, router, index }) => {
                     style={{ fontSize: hp(1.7) }}
                     className="text-neutral-700 font-semibold ml-1 tracking-wide"
                 >
-                    {item?.name?.length > 20 ? item.name.slice(0, 20) + '...' : item.name}
+                {formatText(item?.name?.length > 20 ? item.name.slice(0, 20) + '...' : item.name)}
                 </Text>
             </TouchableOpacity>
-        </View>
+        </Animated.View>
     );
 };

@@ -8,6 +8,8 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ExerciseList from "../components/ExerciseList";
 import { ScrollView } from "react-native-virtualized-view";
+import { formatText } from "../utils/textFormatter"; // Import the utility function
+
 
 
 export default function Exercises() {
@@ -46,7 +48,7 @@ export default function Exercises() {
         {/* exercises */}
         <View className="mx-4 space-y-3 mt-4">
             <Text style={{ fontSize: hp(3) }} className="font-semibold text-neutral-700">
-            {item.name} exercises
+            {formatText(item.name)} Exercises {/* Format the text */}
             </Text>
             <View className="mb-10">
                 <ExerciseList data={exercises}/>
