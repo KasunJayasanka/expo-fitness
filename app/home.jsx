@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -6,8 +6,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ImageSlider from "../components/ImageSlider";
 import BodyParts from "../components/BodyParts";
+import { useRouter } from "expo-router";
 
 export default function Home() {
+  const router = useRouter(); // Initialize router
   const bodyPartsData = [{}]; // Dummy data to allow FlatList to render
 
   return (
@@ -47,12 +49,14 @@ export default function Home() {
                 >
                   Workouts
                 </Text>
-                <View
+                {/* Login Icon */}
+                <TouchableOpacity
+                  onPress={() => router.push("login")} // Redirect to Login screen
                   className="bg-neutral-200 rounded-full flex justify-center items-center border-[3px] border-neutral-300"
                   style={{ height: wp(12), width: wp(12) }}
                 >
-                  <Ionicons name="notifications" size={wp(5)} color="grey" />
-                </View>
+                  <Ionicons name="log-in-outline" size={wp(5)} color="grey" />
+                </TouchableOpacity>
               </View>
             </View>
 
