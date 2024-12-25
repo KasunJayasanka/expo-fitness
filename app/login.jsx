@@ -5,6 +5,10 @@ import Animated, { FadeInUp, FadeInDown } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Import an icon library
+import { login } from "../api/auth"; // Import Login API
+import { useDispatch } from "react-redux"; // Import useDispatch hook
+
+
 
 export default function Login() {
     const router = useRouter();
@@ -14,6 +18,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+
 
     // Validation function
     const validateInputs = () => {
@@ -39,12 +44,16 @@ export default function Login() {
     };
 
     // Handle Login
-    const handleLogin = () => {
-        if (validateInputs()) {
-            alert(`Welcome ${email}`);
-            // Proceed with login logic here
-        }
-    };
+    const dispatch = useDispatch();
+
+  const handleLogin = async () => {
+    try {
+      const userData = await login(email, password, dispatch); // Pass dispatch to login
+      router.push("home");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
     return (
         <View className="bg-white h-full w-full">

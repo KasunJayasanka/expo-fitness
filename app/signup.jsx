@@ -5,6 +5,8 @@ import Animated, { FadeInUp, FadeInDown } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Import an icon library
+import { signUp } from "../api/auth"; // Import Sign-Up API
+import { saveUserData } from "../api/fireStore"; // Import Firestore API
 
 export default function SignUp() {
     const router = useRouter();
@@ -41,13 +43,31 @@ export default function SignUp() {
         return Object.keys(newErrors).length === 0;
     };
 
-    // Handle Sign Up
-    const handleSignUp = () => {
-        if (validateFields()) {
-            alert('Sign Up Successful!');
-            // Navigate to another screen or implement sign-up logic here
+    
+
+    const handleSignUp = async () => {
+    if (validateFields()) {
+        try {
+        // Create User with Email and Password
+        const user = await signUp(email, password);
+
+        // Save User Data in Firestore
+        const userData = {
+            firstName,
+            lastName,
+            email,
+            createdAt: new Date().toISOString(),
+        };
+        await saveUserData(user.uid, userData);
+
+        alert("Sign-Up Successful!");
+        router.push("login"); // Navigate to Login screen
+        } catch (error) {
+        alert(error); // Show error message
         }
+    }
     };
+
 
     return (
         <View className="bg-white h-full w-full">
