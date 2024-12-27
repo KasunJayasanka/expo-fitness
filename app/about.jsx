@@ -86,7 +86,7 @@ export default function AboutPage() {
                             {/* React Native & Expo */}
                             <View style={{ alignItems: 'center', marginBottom: hp(2) }}>
                                 <Image
-                                    source={require('../assets/images/react-native-expo-logo.jpg')}
+                                    source={require('../assets/images/react-native-expo-logo.png')}
                                     style={{ width: wp(30), height: hp(10), marginBottom: hp(1) }}
                                     resizeMode="contain"
                                 />
@@ -119,6 +119,24 @@ export default function AboutPage() {
                                 />
                                 <Text className="text-xl text-gray-800">React Native Reanimated</Text>
                             </View>
+                            {/* Redux */}
+                            <View style={{ alignItems: 'center' }}>
+                                <Image
+                                    source={require('../assets/images/redux-logo.png')}
+                                    style={{ width: wp(30), height: hp(10), marginBottom: hp(1) }}
+                                    resizeMode="contain"
+                                />
+                                <Text className="text-xl text-gray-800">Redux</Text>
+                            </View>
+                             {/* Rapid API */}
+                             <View style={{ alignItems: 'center' }}>
+                             <Image
+                                 source={require('../assets/images/rapid-api-logo.png')}
+                                 style={{ width: wp(30), height: hp(10), marginBottom: hp(1) }}
+                                 resizeMode="contain"
+                             />
+                             <Text className="text-xl text-gray-800">Rapid API</Text>
+                         </View>
                         </View>
                     </Animated.View>
                 </ScrollView>
