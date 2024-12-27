@@ -16,6 +16,15 @@ export default function Exercises() {
   const [exercises, setExercises] = React.useState(demoExercises);
   const item = useLocalSearchParams();
 
+  React.useEffect(() => {
+    if (item?.bodyPart) {
+        const filteredExercises = demoExercises.filter(
+            (exercise) => exercise.bodyPart === item.bodyPart
+        );
+        setExercises(filteredExercises);
+    }
+}, [item?.bodyPart]);
+
 
   useEffect(() => {
     // if (item) getExercises(item.name);

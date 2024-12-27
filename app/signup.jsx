@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, ActivityIndicator } from 'react-native';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Animated, { FadeInUp, FadeInDown } from 'react-native-reanimated';
@@ -18,6 +18,8 @@ export default function SignUp() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false); // State for loading animation
+
 
     // Validation logic
     const validateFields = () => {
@@ -47,6 +49,7 @@ export default function SignUp() {
 
     const handleSignUp = async () => {
     if (validateFields()) {
+        setLoading(true); // Start loading animation
         try {
         // Create User with Email and Password
         const user = await signUp(email, password);
@@ -64,6 +67,8 @@ export default function SignUp() {
         router.push("login"); // Navigate to Login screen
         } catch (error) {
         alert(error); // Show error message
+        } finally {
+            setLoading(false); // Stop loading animation
         }
     }
     };
@@ -214,12 +219,17 @@ export default function SignUp() {
                             className="w-full"
                             style={{ marginBottom: 20 }}
                         >
-                            <TouchableOpacity
-                                className="w-full bg-rose-400 p-4 rounded-2xl"
-                                onPress={handleSignUp}
-                            >
-                                <Text className="text-xl font-bold text-white text-center">Sign Up</Text>
-                            </TouchableOpacity>
+                        <TouchableOpacity
+                        className="w-full bg-rose-400 p-4 rounded-2xl flex flex-row justify-center items-center"
+                        onPress={handleSignUp}
+                        disabled={loading} // Disable button while loading
+                    >
+                        {loading ? (
+                            <ActivityIndicator size="small" color="#fff" />
+                        ) : (
+                            <Text className="text-xl font-bold text-white text-center">Sign Up</Text>
+                        )}
+                    </TouchableOpacity>
                         </Animated.View>
 
                         {/* Login Link */}

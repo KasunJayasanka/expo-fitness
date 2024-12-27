@@ -68,14 +68,22 @@ export default function Home() {
                 >
                   {user && user.firstName ? `${user.firstName} Find` : "Ready to"}
                 </Text>
-                <Image
-                  source={require("../assets/images/avatar.png")}
-                  style={{
-                    width: wp(12),
-                    height: wp(12),
-                  }}
-                  className="rounded-full"
-                />
+                 {/* Avatar - Navigates to Profile or Login */}
+                 <TouchableOpacity
+                 onPress={() => router.push(user ? "profile" : "login")} // Navigate conditionally
+               >
+                 <Image
+                   source={require("../assets/images/avatar.webp")}
+                   style={{
+                     width: wp(12),
+                     height: wp(12),
+                     borderRadius: wp(15),
+                     borderColor: "#f43f5e",
+                     borderWidth: 2,
+                   }}
+                   className="rounded-full"
+                 />
+               </TouchableOpacity>
               </View>
               <View className="flex-row justify-between items-center mt-2">
                 <Text

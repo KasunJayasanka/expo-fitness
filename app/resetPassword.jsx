@@ -1,61 +1,53 @@
-import { View, Text, TextInput, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, Alert, ActivityIndicator } from 'react-native';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Animated, { FadeInUp, FadeInDown } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
-import Ionicons from 'react-native-vector-icons/Ionicons'; // Import an icon library
-import { login } from "../api/auth"; // Import Login API
-import { useDispatch } from "react-redux"; // Import useDispatch hook
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { sendPasswordResetEmail, getAuth } from 'firebase/auth';
 
-export default function Login() {
+export default function ResetPassword() {
     const router = useRouter();
-
-    // State variables
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
     const [loading, setLoading] = useState(false); // State for loading animation
 
     // Validation function
-    const validateInputs = () => {
-        let isValid = true;
-
-        // Email validation
+    const validateEmail = () => {
         if (!email.match(/^\S+@\S+\.\S+$/)) {
-            setEmailError('Invalid email address');
-            isValid = false;
-        } else {
-            setEmailError('');
+            setEmailError('Please enter a valid email address.');
+            return false;
         }
-
-        // Password validation
-        if (password.trim().length < 6) {
-            setPasswordError('Password must be at least 6 characters');
-            isValid = false;
-        } else {
-            setPasswordError('');
-        }
-
-        return isValid;
+        setEmailError('');
+        return true;
     };
 
-    // Handle Login
-    const dispatch = useDispatch();
+    // Firebase Auth instance
+    const auth = getAuth();
 
-    const handleLogin = async () => {
-        if (!validateInputs()) {
+    // Handle Password Reset
+    const handleResetPassword = async () => {
+        if (!validateEmail()) {
             return;
         }
 
         setLoading(true); // Start loading animation
         try {
-            const userData = await login(email, password, dispatch); // Pass dispatch to login
-            router.push("home");
-        } catch (err) {
-            setEmailError('');
-            setPasswordError(err.message || 'Login failed. Please try again.');
+            await sendPasswordResetEmail(auth, email);
+            Alert.alert(
+                'Success',
+                'A password reset email has been sent to your email address.',
+                [{ text: 'OK', onPress: () => router.push('login') }]
+            );
+        } catch (error) {
+            let errorMessage = 'Something went wrong. Please try again.';
+            if (error.code === 'auth/user-not-found') {
+                errorMessage = 'No user found with this email address.';
+            } else if (error.code === 'auth/invalid-email') {
+                errorMessage = 'The email address is not valid.';
+            }
+            Alert.alert('Error', errorMessage);
         } finally {
             setLoading(false); // Stop loading animation
         }
@@ -86,7 +78,7 @@ export default function Login() {
 
             {/* Back Button */}
             <TouchableOpacity
-                onPress={() => router.push('home')} // Navigate to the Home screen
+                onPress={() => router.push('login')}
                 style={{
                     position: 'absolute',
                     top: hp(5),
@@ -108,7 +100,7 @@ export default function Login() {
                         entering={FadeInUp.duration(1000).springify()}
                         className="text-white font-bold tracking-wider text-5xl"
                     >
-                        Login
+                        Reset Password
                     </Animated.Text>
                 </View>
 
@@ -121,7 +113,7 @@ export default function Login() {
                         style={{ marginBottom: 15 }}
                     >
                         <TextInput
-                            placeholder="Email"
+                            placeholder="Enter your email"
                             placeholderTextColor="gray"
                             className="text-black"
                             value={email}
@@ -132,62 +124,22 @@ export default function Login() {
                         ) : null}
                     </Animated.View>
 
-                    {/* Password Input */}
+                    {/* Reset Password Button */}
                     <Animated.View
                         entering={FadeInDown.delay(200).duration(1000).springify()}
-                        className="bg-black/5 p-5 rounded-2xl w-full"
-                        style={{ marginBottom: 25 }}
-                    >
-                        <TextInput
-                            placeholder="Password"
-                            placeholderTextColor="gray"
-                            secureTextEntry
-                            className="text-black"
-                            value={password}
-                            onChangeText={(text) => setPassword(text)}
-                        />
-                        {passwordError ? (
-                            <Text className="text-red-500 text-sm mt-1">{passwordError}</Text>
-                        ) : null}
-                    </Animated.View>
-
-                    {/* Forgot Password Link */}
-                    <TouchableOpacity
-                        onPress={() => router.push('resetPassword')} // Navigate to Reset Password screen
-                        className="self-end mb-5"
-                    >
-                        <Text className="text-rose-600 font-semibold text-sm">
-                            Forgot Password?
-                        </Text>
-                    </TouchableOpacity>
-
-                    {/* Login Button */}
-                    <Animated.View
-                        entering={FadeInDown.delay(400).duration(1000).springify()}
                         className="w-full"
                         style={{ marginBottom: 25 }}
                     >
                         <TouchableOpacity
                             className="w-full bg-rose-400 p-4 rounded-2xl flex flex-row justify-center items-center"
-                            onPress={handleLogin}
+                            onPress={handleResetPassword}
                             disabled={loading} // Disable button while loading
                         >
                             {loading ? (
                                 <ActivityIndicator size="small" color="#fff" />
                             ) : (
-                                <Text className="text-xl font-bold text-white text-center">Login</Text>
+                                <Text className="text-xl font-bold text-white text-center">Reset Password</Text>
                             )}
-                        </TouchableOpacity>
-                    </Animated.View>
-
-                    {/* Sign Up Link */}
-                    <Animated.View
-                        entering={FadeInDown.delay(600).duration(1000).springify()}
-                        className="flex-row justify-center"
-                    >
-                        <Text>Don't have an account? </Text>
-                        <TouchableOpacity onPress={() => router.push('signup')}>
-                            <Text className="text-rose-600 font-semibold">SignUp</Text>
                         </TouchableOpacity>
                     </Animated.View>
                 </View>

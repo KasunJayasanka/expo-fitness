@@ -53,195 +53,298 @@ export const bodyParts = [
     },
 ];
 
-export const demoExercises  =[
+export const demoExercises = [
+   // Back
    {
-       "bodyPart": "waist",
-       "equipment": "body weight",
-       "gifUrl": "https://v2.exercisedb.io/image/BfpmvLmnmbykgl",
-       "id": "0001",
-       "name": "3/4 sit-up",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors",
-           "lower back"
-       ],
-       "instructions": [
-           "Lie flat on your back with your knees bent and feet flat on the ground.",
-           "Place your hands behind your head with your elbows pointing outwards.",
-           "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
-           "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
-           "Repeat for the desired number of repetitions."
-       ]
+     bodyPart: "back",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/jU6NpUKegmk-Vb",
+     id: "001",
+     name: "barbell bent over row",
+     target: "upper back",
+     secondaryMuscles: ["biceps", "forearms"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Grasp the barbell with an overhand grip.",
+       "Pull the barbell towards your lower chest.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "body weight",
-       "gifUrl": "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
-       "id": "0002",
-       "name": "45° side bend",
-       "target": "abs",
-       "secondaryMuscles": [
-           "obliques"
-       ],
-       "instructions": [
-           "Stand with your feet shoulder-width apart and your arms extended straight down by your sides.",
-           "Keeping your back straight and your core engaged, slowly bend your torso to one side, lowering your hand towards your knee.",
-           "Pause for a moment at the bottom, then slowly return to the starting position.",
-           "Repeat on the other side.",
-           "Continue alternating sides for the desired number of repetitions."
-       ]
+     bodyPart: "back",
+     equipment: "cable",
+     gifUrl: "https://v2.exercisedb.io/image/NsXm562QtR8qwa",
+     id: "002",
+     name: "lat pulldown",
+     target: "lats",
+     secondaryMuscles: ["biceps", "shoulders"],
+     instructions: [
+       "Sit at the machine and grasp the bar with a wide grip.",
+       "Pull the bar down to your chest.",
+       "Slowly return to the starting position.",
+     ],
+   },
+ 
+   // Cardio
+   {
+     bodyPart: "cardio",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "003",
+     name: "air bike",
+     target: "cardio",
+     secondaryMuscles: ["abs", "hip flexors"],
+     instructions: [
+       "Lie flat on your back with your hands behind your head.",
+       "Pedal your legs in the air while twisting your torso.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "body weight",
-       "gifUrl": "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
-       "id": "0003",
-       "name": "air bike",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors"
-       ],
-       "instructions": [
-           "Lie flat on your back with your hands placed behind your head.",
-           "Lift your legs off the ground and bend your knees at a 90-degree angle.",
-           "Bring your right elbow towards your left knee while simultaneously straightening your right leg.",
-           "Return to the starting position and repeat the movement on the opposite side, bringing your left elbow towards your right knee while straightening your left leg.",
-           "Continue alternating sides in a pedaling motion for the desired number of repetitions."
-       ]
+     bodyPart: "cardio",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "004",
+     name: "jumping jacks",
+     target: "cardio",
+     secondaryMuscles: ["legs", "shoulders"],
+     instructions: [
+       "Stand upright with your legs together and arms at your sides.",
+       "Jump while spreading your legs and raising your arms.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Chest
+   {
+     bodyPart: "chest",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/e5kaW9TpUzvT1x",
+     id: "005",
+     name: "bench press",
+     target: "pectorals",
+     secondaryMuscles: ["triceps", "shoulders"],
+     instructions: [
+       "Lie flat on a bench and hold the barbell with an overhand grip.",
+       "Lower the barbell to your chest.",
+       "Press the barbell back to the starting position.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "body weight",
-       "gifUrl": "https://v2.exercisedb.io/image/ImPiK8St-p5Qok",
-       "id": "0006",
-       "name": "alternate heel touchers",
-       "target": "abs",
-       "secondaryMuscles": [
-           "obliques"
-       ],
-       "instructions": [
-           "Lie flat on your back with your knees bent and feet flat on the ground.",
-           "Extend your arms straight out to the sides, parallel to the ground.",
-           "Engaging your abs, lift your shoulders off the ground and reach your right hand towards your right heel.",
-           "Return to the starting position and repeat on the left side, reaching your left hand towards your left heel.",
-           "Continue alternating sides for the desired number of repetitions."
-       ]
+     bodyPart: "chest",
+     equipment: "machine",
+     gifUrl: "https://v2.exercisedb.io/image/-wHUQw53XSKLJu",
+     id: "006",
+     name: "chest fly",
+     target: "pectorals",
+     secondaryMuscles: ["shoulders"],
+     instructions: [
+       "Sit on the chest fly machine and grip the handles.",
+       "Bring the handles together in front of your chest.",
+       "Slowly return to the starting position.",
+     ],
+   },
+ 
+   // Lower Arms
+   {
+     bodyPart: "lower arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/LBmdik3oW66urs",
+     id: "007",
+     name: "wrist curl",
+     target: "forearms",
+     secondaryMuscles: ["wrists"],
+     instructions: [
+       "Sit with a dumbbell in your hand, palm facing up.",
+       "Curl your wrist upward.",
+       "Return to the starting position.",
+     ],
    },
    {
-       "bodyPart": "back",
-       "equipment": "cable",
-       "gifUrl": "https://v2.exercisedb.io/image/NsXm562QtR8qwa",
-       "id": "0007",
-       "name": "alternate lateral pulldown",
-       "target": "lats",
-       "secondaryMuscles": [
-           "biceps",
-           "rhomboids"
-       ],
-       "instructions": [
-           "Sit on the cable machine with your back straight and feet flat on the ground.",
-           "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
-           "Lean back slightly and pull the handles towards your chest, squeezing your shoulder blades together.",
-           "Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position.",
-           "Repeat for the desired number of repetitions."
-       ]
+     bodyPart: "lower arms",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/BfpmvLmnmbykgl",
+     id: "008",
+     name: "reverse wrist curl",
+     target: "forearms",
+     secondaryMuscles: ["wrists"],
+     instructions: [
+       "Hold a barbell with an overhand grip.",
+       "Curl your wrists upward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Lower Legs
+   {
+     bodyPart: "lower legs",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/Tp3tNkkB1CLDlL",
+     id: "009",
+     name: "standing calf raise",
+     target: "calves",
+     secondaryMuscles: ["ankles"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Raise your heels off the ground and lower slowly.",
+     ],
    },
    {
-       "bodyPart": "chest",
-       "equipment": "leverage machine",
-       "gifUrl": "https://v2.exercisedb.io/image/-wHUQw53XSKLJu",
-       "id": "0009",
-       "name": "assisted chest dip (kneeling)",
-       "target": "pectorals",
-       "secondaryMuscles": [
-           "triceps",
-           "shoulders"
-       ],
-       "instructions": [
-           "Adjust the machine to your desired height and secure your knees on the pad.",
-           "Grasp the handles with your palms facing down and your arms fully extended.",
-           "Lower your body by bending your elbows until your upper arms are parallel to the floor.",
-           "Pause for a moment, then push yourself back up to the starting position.",
-           "Repeat for the desired number of repetitions."
-       ]
+     bodyPart: "lower legs",
+     equipment: "machine",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "010",
+     name: "seated calf raise",
+     target: "calves",
+     secondaryMuscles: ["ankles"],
+     instructions: [
+       "Sit on the machine with the pads resting on your knees.",
+       "Raise your heels off the ground.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Neck
+   {
+     bodyPart: "neck",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/ATCt4cAzd-c3Bt",
+     id: "011",
+     name: "neck extension",
+     target: "neck",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Sit upright and gently tilt your head backward.",
+       "Return to the starting position.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "assisted",
-       "gifUrl": "https://v2.exercisedb.io/image/-D0TkUUEJmhR3M",
-       "id": "0010",
-       "name": "assisted hanging knee raise with throw down",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors",
-           "lower back"
-       ],
-       "instructions": [
-           "Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
-           "Engage your core and lift your knees towards your chest, keeping your legs together.",
-           "Once your knees are at chest level, explosively throw your legs down towards the ground, extending them fully.",
-           "Allow your legs to swing back up and repeat the movement for the desired number of repetitions."
-       ]
+     bodyPart: "neck",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "012",
+     name: "neck flexion",
+     target: "neck",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Sit upright and tilt your head forward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Shoulders
+   {
+     bodyPart: "shoulders",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/jU6NpUKegmk-Vb",
+     id: "013",
+     name: "overhead press",
+     target: "deltoids",
+     secondaryMuscles: ["triceps"],
+     instructions: [
+       "Hold the barbell at shoulder height.",
+       "Press the barbell overhead.",
+       "Return to the starting position.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "assisted",
-       "gifUrl": "https://v2.exercisedb.io/image/Tp3tNkkB1CLDlL",
-       "id": "0011",
-       "name": "assisted hanging knee raise",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors"
-       ],
-       "instructions": [
-           "Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
-           "Engage your core muscles and lift your knees towards your chest, bending at the hips and knees.",
-           "Pause for a moment at the top of the movement, squeezing your abs.",
-           "Slowly lower your legs back down to the starting position.",
-           "Repeat for the desired number of repetitions."
-       ]
+     bodyPart: "shoulders",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/NsXm562QtR8qwa",
+     id: "014",
+     name: "lateral raise",
+     target: "deltoids",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Hold a dumbbell in each hand by your sides.",
+       "Lift the dumbbells to shoulder height.",
+       "Lower them back down.",
+     ],
+   },
+ 
+   // Upper Arms
+   {
+     bodyPart: "upper arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/ImPiK8St-p5Qok",
+     id: "015",
+     name: "bicep curl",
+     target: "biceps",
+     secondaryMuscles: ["forearms"],
+     instructions: [
+       "Hold a dumbbell in each hand with palms facing up.",
+       "Curl the dumbbells toward your shoulders.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "assisted",
-       "gifUrl": "https://v2.exercisedb.io/image/ATCt4cAzd-c3Bt",
-       "id": "0012",
-       "name": "assisted lying leg raise with lateral throw down",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors",
-           "obliques"
-       ],
-       "instructions": [
-           "Lie flat on your back with your legs extended and your arms by your sides.",
-           "Place your hands under your glutes for support.",
-           "Engage your abs and lift your legs off the ground, keeping them straight.",
-           "While keeping your legs together, lower them to one side until they are a few inches above the ground.",
-           "Pause for a moment, then lift your legs back to the starting position.",
-           "Repeat the movement to the other side.",
-           "Continue alternating sides for the desired number of repetitions."
-       ]
+     bodyPart: "upper arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/Tp3tNkkB1CLDlL",
+     id: "016",
+     name: "tricep kickback",
+     target: "triceps",
+     secondaryMuscles: ["shoulders"],
+     instructions: [
+       "Hold a dumbbell in each hand.",
+       "Extend your arms backward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Upper Legs
+   {
+     bodyPart: "upper legs",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "017",
+     name: "bodyweight squat",
+     target: "quads",
+     secondaryMuscles: ["glutes", "hamstrings"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Lower your hips down and back into a squat.",
+     ],
    },
    {
-       "bodyPart": "waist",
-       "equipment": "assisted",
-       "gifUrl": "https://v2.exercisedb.io/image/LBmdik3oW66urs",
-       "id": "0013",
-       "name": "assisted lying leg raise with throw down",
-       "target": "abs",
-       "secondaryMuscles": [
-           "hip flexors",
-           "quadriceps"
-       ],
-       "instructions": [
-           "Lie flat on your back with your legs extended and your arms by your sides.",
-           "Place your hands under your glutes for support.",
-           "Engage your core and lift your legs off the ground, keeping them straight.",
-           "Raise your legs until they are perpendicular to the ground.",
-           "Lower your legs back down to the starting position.",
-           "Simultaneously, throw your legs down towards the ground, keeping them straight.",
-           "Raise your legs back up to the starting position.",
-           "Repeat for the desired number of repetitions."
-       ]
-   }
-];
+     bodyPart: "upper legs",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "018",
+     name: "barbell lunge",
+     target: "quads",
+     secondaryMuscles: ["glutes", "hamstrings"],
+     instructions: [
+       "Hold a barbell on your shoulders.",
+       "Step forward and lower your body into a lunge.",
+       "Push back to the starting position.",
+     ],
+   },
+ 
+   // Waist
+   {
+     bodyPart: "waist",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/BfpmvLmnmbykgl",
+     id: "019",
+     name: "plank",
+     target: "abs",
+     secondaryMuscles: ["obliques", "lower back"],
+     instructions: [
+       "Get into a push-up position with your weight on your forearms.",
+       "Hold your body in a straight line.",
+     ],
+   },
+   {
+     bodyPart: "waist",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "020",
+     name: "crunch",
+     target: "abs",
+     secondaryMuscles: ["obliques"],
+     instructions: [
+       "Lie on your back with your knees bent.",
+       "Lift your shoulders off the ground.",
+       "Lower back down.",
+     ],
+   },
+ ];
+ 
