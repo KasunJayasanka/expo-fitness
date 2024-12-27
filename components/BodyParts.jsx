@@ -35,53 +35,53 @@ export default function BodyParts() {
     );
   }
 
-const BodyPartCard = ({ item, router, index }) => {
-  return (
-    <Animated.View entering={FadeInDown.duration(400).delay(index * 200).springify()}>
-      <TouchableOpacity
-        onPress={() => router.push({ pathname: '/exercises', params: item })}
-        style={{ width: wp(44), height: wp(52) }}
-        className="flex justify-end p-4 mb-4"
-      >
-        {/* Image */}
-        <Image
-          source={item.image}
-          resizeMode="cover"
-          style={{ width: wp(44), height: wp(52) }}
-          className="rounded-[20px] absolute"
-        />
+  const BodyPartCard = ({ item, router, index }) => {
+    return (
+        <Animated.View entering={FadeInDown.duration(400).delay(index * 200).springify()}>
+            <TouchableOpacity
+                onPress={() => router.push({ pathname: '/exercises', params: { bodyPart: item.name , image:item.image} })} // Pass bodyPart
+                style={{ width: wp(44), height: wp(52) }}
+                className="flex justify-end p-4 mb-4"
+            >
+                {/* Image */}
+                <Image
+                    source={item.image}
+                    resizeMode="cover"
+                    style={{ width: wp(44), height: wp(52) }}
+                    className="rounded-[20px] absolute"
+                />
 
-        {/* Linear Gradient */}
-        <LinearGradient
-          colors={['transparent', 'rgba(0,0,0,0.9)']}
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            width: wp(44),
-            height: hp(15),
-            borderBottomLeftRadius: wp(5),
-            borderBottomRightRadius: wp(5),
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          start={{ x: 0.5, y: 0 }}
-          end={{ x: 0.5, y: 1 }}
-        />
+                {/* Linear Gradient */}
+                <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.9)']}
+                    style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        width: wp(44),
+                        height: hp(15),
+                        borderBottomLeftRadius: wp(5),
+                        borderBottomRightRadius: wp(5),
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                    start={{ x: 0.5, y: 0 }}
+                    end={{ x: 0.5, y: 1 }}
+                />
 
-        {/* Text */}
-        <Text
-          style={{
-            color: 'white',
-            bottom: hp(2.3),
-            left: wp(2),
-            fontSize: hp(2.5),
-            fontWeight: 'bold',
-            textAlign: 'center',
-          }}
-        >
-          {formatText(item.name)} {/* Use the utility function here */}
-        </Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
+                {/* Text */}
+                <Text
+                    style={{
+                        color: 'white',
+                        bottom: hp(2.3),
+                        left: wp(2),
+                        fontSize: hp(2.5),
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                    }}
+                >
+                    {formatText(item.name)} {/* Use the utility function here */}
+                </Text>
+            </TouchableOpacity>
+        </Animated.View>
+    );
 };

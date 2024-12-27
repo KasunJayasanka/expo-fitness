@@ -53,203 +53,298 @@ export const bodyParts = [
     },
 ];
 
-export const demoExercises  =[
-    {
-       "bodyPart":"back",
-       "equipment":"cable",
-       "gifUrl":"https://v2.exercisedb.io/image/0axgjPgrloi7az",
-       "id":"0007",
-       "instructions":[
-          "Sit on the cable machine with your back straight and feet flat on the ground.",
-          "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
-          "Lean back slightly and pull the handles towards your chest, squeezing your shoulder blades together.",
-          "Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"alternate lateral pulldown",
-       "secondaryMuscles":[
-          "biceps",
-          "rhomboids"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"leverage machine",
-       "gifUrl":"https://v2.exercisedb.io/image/k5YdAJ-SdvvDSz",
-       "id":"0015",
-       "instructions":[
-          "Adjust the machine to your desired weight and height.",
-          "Place your hands on the parallel bars with a close grip, palms facing each other.",
-          "Hang from the bars with your arms fully extended and your feet off the ground.",
-          "Engage your back muscles and pull your body up towards the bars, keeping your elbows close to your body.",
-          "Continue pulling until your chin is above the bars.",
-          "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"assisted parallel close grip pull-up",
-       "secondaryMuscles":[
-          "biceps",
-          "forearms"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"leverage machine",
-       "gifUrl":"https://v2.exercisedb.io/image/II7u1ZAKxBI5Cj",
-       "id":"0017",
-       "instructions":[
-          "Adjust the machine to your desired weight and height settings.",
-          "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
-          "Hang with your arms fully extended and your feet off the ground.",
-          "Engage your back muscles and pull your body up towards the handles, keeping your elbows close to your body.",
-          "Continue pulling until your chin is above the handles.",
-          "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"assisted pull-up",
-       "secondaryMuscles":[
-          "biceps",
-          "forearms"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/jU6NpUKegmk-Vb",
-       "id":"0022",
-       "instructions":[
-          "Lie flat on a bench with your head at one end and your feet on the ground.",
-          "Hold the barbell with a pronated grip (palms facing away from you) and extend your arms straight above your chest.",
-          "Keeping your arms straight, lower the barbell behind your head in an arc-like motion until you feel a stretch in your lats.",
-          "Pause for a moment, then reverse the motion and press the barbell back to the starting position above your chest.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell pullover to press",
-       "secondaryMuscles":[
-          "triceps",
-          "chest",
-          "shoulders"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/vywuP77NQHdABz",
-       "id":"0027",
-       "instructions":[
-          "Stand with your feet shoulder-width apart and knees slightly bent.",
-          "Bend forward at the hips while keeping your back straight and chest up.",
-          "Grasp the barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
-          "Pull the barbell towards your lower chest by retracting your shoulder blades and squeezing your back muscles.",
-          "Pause for a moment at the top, then slowly lower the barbell back to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell bent over row",
-       "secondaryMuscles":[
-          "biceps",
-          "forearms"
-       ],
-       "target":"upper back"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/e5kaW9TpUzvT1x",
-       "id":"0034",
-       "instructions":[
-          "Lie down on a decline bench with your head lower than your hips and your feet secured.",
-          "Hold a barbell with a pronated grip (palms facing away from you) and extend your arms straight above your chest.",
-          "Lower the barbell behind your head in a controlled manner, keeping your arms slightly bent.",
-          "Pause for a moment, then raise the barbell back to the starting position by contracting your lats.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell decline bent arm pullover",
-       "secondaryMuscles":[
-          "triceps",
-          "chest"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/nkwZUKkdoP2E4F",
-       "id":"0037",
-       "instructions":[
-          "Lie on a decline bench with your head lower than your hips and your feet secured.",
-          "Hold a barbell with a wide grip and extend your arms straight above your chest.",
-          "Lower the barbell behind your head in a controlled manner, keeping your arms straight.",
-          "Pause for a moment, then raise the barbell back to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell decline wide-grip pullover",
-       "secondaryMuscles":[
-          "triceps",
-          "chest"
-       ],
-       "target":"lats"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/djlL5p08YRShaC",
-       "id":"0049",
-       "instructions":[
-          "Set up an incline bench at a 45-degree angle.",
-          "Lie face down on the bench with your chest against the pad and your feet flat on the ground.",
-          "Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart.",
-          "Keep your back straight and your core engaged.",
-          "Pull the barbell towards your chest, squeezing your shoulder blades together.",
-          "Pause for a moment at the top, then slowly lower the barbell back to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell incline row",
-       "secondaryMuscles":[
-          "biceps",
-          "forearms"
-       ],
-       "target":"upper back"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/RNPQwkGZqZH1km",
-       "id":"0064",
-       "instructions":[
-          "Stand with your feet shoulder-width apart, knees slightly bent, and hold a barbell with one hand using an overhand grip.",
-          "Bend forward at the hips, keeping your back straight and your head in a neutral position.",
-          "Pull the barbell up towards your chest, keeping your elbow close to your body and squeezing your shoulder blades together.",
-          "Lower the barbell back down to the starting position in a controlled manner.",
-          "Repeat for the desired number of repetitions, then switch to the other arm."
-       ],
-       "name":"barbell one arm bent over row",
-       "secondaryMuscles":[
-          "biceps",
-          "forearms"
-       ],
-       "target":"upper back"
-    },
-    {
-       "bodyPart":"back",
-       "equipment":"barbell",
-       "gifUrl":"https://v2.exercisedb.io/image/kN0o-gNJL65nH5",
-       "id":"0073",
-       "instructions":[
-          "Lie flat on a bench with your head at one end and your feet on the floor.",
-          "Hold a barbell with a shoulder-width grip and extend your arms straight above your chest.",
-          "Keeping your arms straight, lower the barbell behind your head in a controlled manner until you feel a stretch in your lats.",
-          "Pause for a moment, then raise the barbell back to the starting position.",
-          "Repeat for the desired number of repetitions."
-       ],
-       "name":"barbell pullover",
-       "secondaryMuscles":[
-          "chest",
-          "triceps"
-       ],
-       "target":"lats"
-    }
+export const demoExercises = [
+   // Back
+   {
+     bodyPart: "back",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/jU6NpUKegmk-Vb",
+     id: "001",
+     name: "barbell bent over row",
+     target: "upper back",
+     secondaryMuscles: ["biceps", "forearms"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Grasp the barbell with an overhand grip.",
+       "Pull the barbell towards your lower chest.",
+     ],
+   },
+   {
+     bodyPart: "back",
+     equipment: "cable",
+     gifUrl: "https://v2.exercisedb.io/image/NsXm562QtR8qwa",
+     id: "002",
+     name: "lat pulldown",
+     target: "lats",
+     secondaryMuscles: ["biceps", "shoulders"],
+     instructions: [
+       "Sit at the machine and grasp the bar with a wide grip.",
+       "Pull the bar down to your chest.",
+       "Slowly return to the starting position.",
+     ],
+   },
+ 
+   // Cardio
+   {
+     bodyPart: "cardio",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "003",
+     name: "air bike",
+     target: "cardio",
+     secondaryMuscles: ["abs", "hip flexors"],
+     instructions: [
+       "Lie flat on your back with your hands behind your head.",
+       "Pedal your legs in the air while twisting your torso.",
+     ],
+   },
+   {
+     bodyPart: "cardio",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "004",
+     name: "jumping jacks",
+     target: "cardio",
+     secondaryMuscles: ["legs", "shoulders"],
+     instructions: [
+       "Stand upright with your legs together and arms at your sides.",
+       "Jump while spreading your legs and raising your arms.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Chest
+   {
+     bodyPart: "chest",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/e5kaW9TpUzvT1x",
+     id: "005",
+     name: "bench press",
+     target: "pectorals",
+     secondaryMuscles: ["triceps", "shoulders"],
+     instructions: [
+       "Lie flat on a bench and hold the barbell with an overhand grip.",
+       "Lower the barbell to your chest.",
+       "Press the barbell back to the starting position.",
+     ],
+   },
+   {
+     bodyPart: "chest",
+     equipment: "machine",
+     gifUrl: "https://v2.exercisedb.io/image/-wHUQw53XSKLJu",
+     id: "006",
+     name: "chest fly",
+     target: "pectorals",
+     secondaryMuscles: ["shoulders"],
+     instructions: [
+       "Sit on the chest fly machine and grip the handles.",
+       "Bring the handles together in front of your chest.",
+       "Slowly return to the starting position.",
+     ],
+   },
+ 
+   // Lower Arms
+   {
+     bodyPart: "lower arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/LBmdik3oW66urs",
+     id: "007",
+     name: "wrist curl",
+     target: "forearms",
+     secondaryMuscles: ["wrists"],
+     instructions: [
+       "Sit with a dumbbell in your hand, palm facing up.",
+       "Curl your wrist upward.",
+       "Return to the starting position.",
+     ],
+   },
+   {
+     bodyPart: "lower arms",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/BfpmvLmnmbykgl",
+     id: "008",
+     name: "reverse wrist curl",
+     target: "forearms",
+     secondaryMuscles: ["wrists"],
+     instructions: [
+       "Hold a barbell with an overhand grip.",
+       "Curl your wrists upward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Lower Legs
+   {
+     bodyPart: "lower legs",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/Tp3tNkkB1CLDlL",
+     id: "009",
+     name: "standing calf raise",
+     target: "calves",
+     secondaryMuscles: ["ankles"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Raise your heels off the ground and lower slowly.",
+     ],
+   },
+   {
+     bodyPart: "lower legs",
+     equipment: "machine",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "010",
+     name: "seated calf raise",
+     target: "calves",
+     secondaryMuscles: ["ankles"],
+     instructions: [
+       "Sit on the machine with the pads resting on your knees.",
+       "Raise your heels off the ground.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Neck
+   {
+     bodyPart: "neck",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/ATCt4cAzd-c3Bt",
+     id: "011",
+     name: "neck extension",
+     target: "neck",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Sit upright and gently tilt your head backward.",
+       "Return to the starting position.",
+     ],
+   },
+   {
+     bodyPart: "neck",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "012",
+     name: "neck flexion",
+     target: "neck",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Sit upright and tilt your head forward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Shoulders
+   {
+     bodyPart: "shoulders",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/jU6NpUKegmk-Vb",
+     id: "013",
+     name: "overhead press",
+     target: "deltoids",
+     secondaryMuscles: ["triceps"],
+     instructions: [
+       "Hold the barbell at shoulder height.",
+       "Press the barbell overhead.",
+       "Return to the starting position.",
+     ],
+   },
+   {
+     bodyPart: "shoulders",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/NsXm562QtR8qwa",
+     id: "014",
+     name: "lateral raise",
+     target: "deltoids",
+     secondaryMuscles: ["trapezius"],
+     instructions: [
+       "Hold a dumbbell in each hand by your sides.",
+       "Lift the dumbbells to shoulder height.",
+       "Lower them back down.",
+     ],
+   },
+ 
+   // Upper Arms
+   {
+     bodyPart: "upper arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/ImPiK8St-p5Qok",
+     id: "015",
+     name: "bicep curl",
+     target: "biceps",
+     secondaryMuscles: ["forearms"],
+     instructions: [
+       "Hold a dumbbell in each hand with palms facing up.",
+       "Curl the dumbbells toward your shoulders.",
+     ],
+   },
+   {
+     bodyPart: "upper arms",
+     equipment: "dumbbell",
+     gifUrl: "https://v2.exercisedb.io/image/Tp3tNkkB1CLDlL",
+     id: "016",
+     name: "tricep kickback",
+     target: "triceps",
+     secondaryMuscles: ["shoulders"],
+     instructions: [
+       "Hold a dumbbell in each hand.",
+       "Extend your arms backward.",
+       "Return to the starting position.",
+     ],
+   },
+ 
+   // Upper Legs
+   {
+     bodyPart: "upper legs",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "017",
+     name: "bodyweight squat",
+     target: "quads",
+     secondaryMuscles: ["glutes", "hamstrings"],
+     instructions: [
+       "Stand with your feet shoulder-width apart.",
+       "Lower your hips down and back into a squat.",
+     ],
+   },
+   {
+     bodyPart: "upper legs",
+     equipment: "barbell",
+     gifUrl: "https://v2.exercisedb.io/image/AgxtmC2soNF8N4",
+     id: "018",
+     name: "barbell lunge",
+     target: "quads",
+     secondaryMuscles: ["glutes", "hamstrings"],
+     instructions: [
+       "Hold a barbell on your shoulders.",
+       "Step forward and lower your body into a lunge.",
+       "Push back to the starting position.",
+     ],
+   },
+ 
+   // Waist
+   {
+     bodyPart: "waist",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/BfpmvLmnmbykgl",
+     id: "019",
+     name: "plank",
+     target: "abs",
+     secondaryMuscles: ["obliques", "lower back"],
+     instructions: [
+       "Get into a push-up position with your weight on your forearms.",
+       "Hold your body in a straight line.",
+     ],
+   },
+   {
+     bodyPart: "waist",
+     equipment: "body weight",
+     gifUrl: "https://v2.exercisedb.io/image/IQFKXEhszvQ3Ea",
+     id: "020",
+     name: "crunch",
+     target: "abs",
+     secondaryMuscles: ["obliques"],
+     instructions: [
+       "Lie on your back with your knees bent.",
+       "Lift your shoulders off the ground.",
+       "Lower back down.",
+     ],
+   },
  ];
+ 

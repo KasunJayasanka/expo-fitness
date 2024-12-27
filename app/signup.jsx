@@ -1,10 +1,12 @@
-import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, ActivityIndicator } from 'react-native';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Animated, { FadeInUp, FadeInDown } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Import an icon library
+import { signUp } from "../api/auth"; // Import Sign-Up API
+import { saveUserData } from "../api/fireStore"; // Import Firestore API
 
 export default function SignUp() {
     const router = useRouter();
@@ -16,6 +18,8 @@ export default function SignUp() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false); // State for loading animation
+
 
     // Validation logic
     const validateFields = () => {
@@ -41,13 +45,34 @@ export default function SignUp() {
         return Object.keys(newErrors).length === 0;
     };
 
-    // Handle Sign Up
-    const handleSignUp = () => {
-        if (validateFields()) {
-            alert('Sign Up Successful!');
-            // Navigate to another screen or implement sign-up logic here
+    
+
+    const handleSignUp = async () => {
+    if (validateFields()) {
+        setLoading(true); // Start loading animation
+        try {
+        // Create User with Email and Password
+        const user = await signUp(email, password);
+
+        // Save User Data in Firestore
+        const userData = {
+            firstName,
+            lastName,
+            email,
+            createdAt: new Date().toISOString(),
+        };
+        await saveUserData(user.uid, userData);
+
+        alert("Sign-Up Successful!");
+        router.push("login"); // Navigate to Login screen
+        } catch (error) {
+        alert(error); // Show error message
+        } finally {
+            setLoading(false); // Stop loading animation
         }
+    }
     };
+
 
     return (
         <View className="bg-white h-full w-full">
@@ -194,12 +219,17 @@ export default function SignUp() {
                             className="w-full"
                             style={{ marginBottom: 20 }}
                         >
-                            <TouchableOpacity
-                                className="w-full bg-rose-400 p-4 rounded-2xl"
-                                onPress={handleSignUp}
-                            >
-                                <Text className="text-xl font-bold text-white text-center">Sign Up</Text>
-                            </TouchableOpacity>
+                        <TouchableOpacity
+                        className="w-full bg-rose-400 p-4 rounded-2xl flex flex-row justify-center items-center"
+                        onPress={handleSignUp}
+                        disabled={loading} // Disable button while loading
+                    >
+                        {loading ? (
+                            <ActivityIndicator size="small" color="#fff" />
+                        ) : (
+                            <Text className="text-xl font-bold text-white text-center">Sign Up</Text>
+                        )}
+                    </TouchableOpacity>
                         </Animated.View>
 
                         {/* Login Link */}

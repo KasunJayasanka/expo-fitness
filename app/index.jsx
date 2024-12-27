@@ -8,6 +8,7 @@ import { FadeIn, FadeOut } from 'react-native-reanimated';
 import { use } from 'react';
 import { useRouter } from 'expo-router';
 
+
 export default function Index() {
 
   const router = useRouter(); 
