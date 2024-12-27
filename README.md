@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# Expo Fitness Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+The Expo Fitness Mobile App is a fitness application developed to help users to manage their workout plans efficiently. The app integrates an extensive exercise database, user authentication, state management, and data persistence.
 
-## Get started
+## Features
+- **User Authentication**: Secure user authentication using Firebase.
+- **Workout Database**: Integration with RapidAPI ExerciseDB for fetching workout data.
+- **State Management**: Efficient state management with Redux.
+- **Session Persistence**: User session persistence with Async Storage.
 
-1. Install dependencies
+## Architecture
 
+![Expo Fitness Mobile App Architecture](./expo-fitness-mobile-app-architecture.png)
+
+### Architecture Components
+
+1. **Frontend**:
+   - **React Native with Expo**: For building the mobile user interface.
+   - **Redux**: Handles state management for efficient application state updates.
+   - **Async Storage**: Used for persisting user session data locally.
+
+2. **API**:
+   - **RapidAPI ExerciseDB**: Provides access to an extensive database of workout exercises.
+
+3. **Backend**:
+   - **Firebase**:
+     - **Authentication**: Ensures secure user login and registration.
+     - **Firestore**: For storing user-specific data such as workout logs and preferences.
+
+### Data Flow
+1. The user interacts with the frontend built using React Native.
+2. API calls to RapidAPI ExerciseDB fetch workout data.
+3. Firebase handles user authentication and stores user data in Firestore.
+4. State management is handled by Redux to maintain the consistency of application state.
+5. Async Storage is used to persist user sessions and local data.
+
+## Installation and Setup
+
+To set up and run the app locally, follow the steps below:
+
+### Prerequisites
+- Node.js and npm
+- Expo CLI
+- Firebase Project Configuration
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KasunJayasanka/expo-fitness.git
+   cd expo-fitness
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Set up Firebase:
+   - Create a Firebase project.
+   - Add your Firebase configuration in a `firebaseConfig.js` file in the `src/api` folder.
 
+4. Start the app:
    ```bash
-    npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+## Technologies Used
+- **Frontend**: React Native, Expo
+- **API**: RapidAPI ExerciseDB
+- **Backend**: Firebase (Authentication, Firestore)
+- **State Management**: Redux
+- **Storage**: Async Storage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Contributing
+We welcome contributions! Please fork the repository, create a branch, and submit a pull request.
