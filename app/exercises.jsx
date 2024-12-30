@@ -13,7 +13,7 @@ import { useEffect } from "react";
 
 export default function Exercises() {
   const router = useRouter();
-  const [exercises, setExercises] = React.useState(demoExercises);
+  const [exercises, setExercises] = React.useState(demoExercises); // Response has been saved to demoExercises for testing due to API request limits
   const item = useLocalSearchParams();
 
   React.useEffect(() => {
@@ -27,7 +27,7 @@ export default function Exercises() {
 
 
   useEffect(() => {
-    // if (item) getExercises(item.name);
+    if (item) getExercises(item.name);
   }, [item]);
   
   const getExercises = async (bodyPart) => { 
